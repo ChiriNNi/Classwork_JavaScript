@@ -1,0 +1,54 @@
+/* body {
+    position: relative;
+    height: 2000px;
+}
+div {
+    background: navy;
+    height: 50px;
+    width: 100px;
+    position: absolute;
+} */
+
+/* body {
+    margin: 0; 
+}
+div {
+    background: navy;
+    height: 255px;
+    width: 255px;
+} */
+
+.main-container {
+    margin: auto;
+    border: 1px solid rgb(89,123,160);
+    display: flex;
+    width: 1000px;
+    height: 350px;
+}
+
+.tabs {
+    width: 100px;
+    margin-right: 10px;
+    background-color: rgb(89,123,160);
+}
+
+.button {
+    margin-top: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 3em;
+    color: white;
+}
+
+.button:hover{
+    background-color: rgb(72,115,161);
+}
+
+.info {
+    width: 890px; 
+    font-size: 20px;
+    padding-right: 10px;
+    padding-top: 10%;
+    text-align: center;
+    color: black;
+}
