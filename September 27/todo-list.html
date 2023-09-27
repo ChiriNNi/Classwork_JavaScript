@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		 <title>Phone book</title>
+		 <style>
+			 body{
+				 font-family:"Courier New", Courier, monospace;
+			 }
+		 </style>
+	</head>
+	<body>
+		 <h2>Список дел</h2>
+		 <div>
+			 <input type="text" placeholder="Задача" name="name" id="task"/>
+			 <input type="button" value="Добавить задачу" onclick="add_click()" />
+			 <input type="submit" value="Save" style="margin-left:50px" />
+		 </div>
+		 <script>
+			function add_click(){
+				 if (typeof tasksCounter == 'undefined')
+					tasksCounter = 1;
+				 tasksCounter++;
+				 var f = document.body;
+				 var line = f.children[0];
+				 container = document.createElement('div')
+				 container.style = "display: flex"
+				 newLine = document.createElement('p')
+				 newLine.innerText = task.value;
+				 container.appendChild(newLine)
+				 f.insertBefore(container, f[tasksCounter+1]);
+
+                 var removeButton = document.createElement('input')
+                 removeButton.type = 'button'
+                 removeButton.value = 'Remove'
+                 removeButton.addEventListener('click', rem_click)
+                 container.appendChild(removeButton)
+
+				 localStorage.setItem(`data${tasksCounter-1}`, newLine.innerText)
+				 console.log(localStorage)
+			}
+
+            function rem_click(event) {
+                var line = event.target.closest('div')
+                var f = document.body;
+                f.removeChild(line)
+                tasksCounter--
+            }
+		 </script>
+	</body>
+</html>
+
