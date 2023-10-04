@@ -19,6 +19,10 @@
 // }, 1000, 3, 7)
 
 
+const xhr = new XMLHttpRequest() 
+var response
+xhr.open("GET", `https://api.quotable.io/random`)
+
 count=0
 function writeText(text) {
     if (text.length == count) {
@@ -28,4 +32,13 @@ function writeText(text) {
     document.write(text[count])
     count++
 }
-setInterval(writeText, 200, "To be, or not to be, that is the question...")
+
+xhr.onload = () => {
+    response = JSON.parse(xhr.response)
+    console.log(response)
+    setInterval(writeText, 200, response.content)
+
+}
+xhr.send()
+
+
