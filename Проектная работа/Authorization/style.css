@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #02101B;
+  color: white;
+  font-family: Arial, sans-serif; /* Добавлен шрифт для лучшей читаемости текста */
+  display: flex; /* Добавлено для центрирования контейнера */
+  justify-content: center; /* Центрирует контейнер по горизонтали */
+  align-items: center; /* Центрирует контейнер по вертикали */
+  height: 100vh; /* Заполнить весь видимый экран по вертикали */
+  margin: 0; /* Убирает внешние отступы */
+}
+
+.container {
+  padding: 16px;
+  max-width: 400px; /* Максимальная ширина контейнера */
+  width: 100%; /* Занимает всю доступную ширину */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+a {
+  color: dodgerblue;
+}
+
+.signin {
+  background-color: #02101B;
+
+  text-align: center;
+}

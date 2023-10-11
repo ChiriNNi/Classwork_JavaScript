@@ -1,0 +1,38 @@
+function toggleForm() {
+    var formTitle = document.getElementById("formTitle");
+    var formDescription = document.getElementById("formDescription");
+    var formSwitch = document.getElementById("formSwitch");
+    var authForm = document.getElementById("authForm");
+
+    if (formTitle.textContent === "Register") {
+        formTitle.textContent = "Authorization";
+        formDescription.textContent = "Please fill in this form to sign in an account.";
+        formSwitch.innerHTML = 'Don\'t have an account? <button type="button" onclick="toggleForm()">Register</button>.';
+        authForm.reset();
+    } else {
+        formTitle.textContent = "Register";
+        formDescription.textContent = "Please fill in this form to create an account.";
+        formSwitch.innerHTML = 'Already have an account? <button type="button" onclick="toggleForm()">Sign in</button>.';
+        authForm.reset();
+    }
+}
+
+function handleFormSubmit() {
+    var formTitle = document.getElementById("formTitle");
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    if (formTitle.textContent === "Register") {
+        localStorage.setItem("email", email);
+        localStorage.setItem("password", password);
+    } else {
+        var storedEmail = localStorage.getItem("email");
+        var storedPassword = localStorage.getItem("password");
+
+        if (email === storedEmail && password === storedPassword) {
+            alert("OK");
+        } else {
+            alert("NOT OK");
+        }
+    }
+}

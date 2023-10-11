@@ -1,0 +1,31 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  width: 100%;
+}
+
+h5 {
+    font-size: 1rem;
+    line-height: 1.375;
+    font-family: Rubik, Arial,sans-serif;
+    font-weight: 500;
+    color: white;
+}
+
+a {
+  color: #818494;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
