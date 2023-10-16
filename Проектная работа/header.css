@@ -1,10 +1,4 @@
-body{ 
-    padding: 0px 15px;
-    display: flex;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    background-color: rgb(2,16,27);
-}
+
 
 a{
     color: white; 
@@ -32,7 +26,7 @@ h1{
 }
 
 .logo{
-    /* background-color: black;  */
+    background-color: black; 
     width: 200px;
     height: 80px;
     font-size: 0px;

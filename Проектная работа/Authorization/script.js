@@ -8,12 +8,10 @@ function toggleForm() {
         formTitle.textContent = "Authorization";
         formDescription.textContent = "Please fill in this form to sign in an account.";
         formSwitch.innerHTML = 'Don\'t have an account? <button type="button" onclick="toggleForm()">Register</button>.';
-        authForm.reset();
     } else {
         formTitle.textContent = "Register";
         formDescription.textContent = "Please fill in this form to create an account.";
         formSwitch.innerHTML = 'Already have an account? <button type="button" onclick="toggleForm()">Sign in</button>.';
-        authForm.reset();
     }
 }
 
@@ -30,7 +28,7 @@ function handleFormSubmit() {
         var storedPassword = localStorage.getItem("password");
 
         if (email === storedEmail && password === storedPassword) {
-            alert("OK");
+            window.location.href = '../index.html';
         } else {
             alert("NOT OK");
         }
