@@ -7,9 +7,20 @@
     <title>Kinopoisk</title>
     <link rel="shortcut icon" href="img/header.jpg" type="image/png">
 
+    <style>
+        body{ 
+            padding: 0px 15px;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            background-color: rgb(2,16,27);
+        }
+    </style>
+
     <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="head_main.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="dropdown.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,16 +34,51 @@
             <a href="#" class="nav-item">Home</a>
             <a href="#" class="nav-item">Contact</a>
             <a href="#" class="nav-item">About</a>
-            <a href="#" class="nav-item">Sign In</a>
-            <a href="#" class="nav-item">Sign up</a>
+            <div class="dropdown">
+                <a href="#" class="nav-item">Movie</a>
+                <div class="dropdown-content">
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item">
+                            <b>Жанр</b>
+                            <br>
+                            <form class="sub-menu">
+                                <label><input type="radio" name="genre" value="Фантастика"> Фантастика<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="Комедии"> Комедии<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="Мультфильмы"> Мультфильмы<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="Ужасы"> Ужасы<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="Аниме"> Аниме<span class="checkmark"></span></label>
+                            </form>
+                        </li>
+
+                        <li class="dropdown-item">
+                            <b>Страна</b>
+                            <br>
+                            <form class="sub-menu">
+                                <label><input type="radio" name="country" value="Россия"> Россия<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="США"> США<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="Япония"> Япония<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="Франция"> Франция<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="СССР"> СССР<span class="checkmark"></span></label>
+                            </form>
+                        </li>
+                        <li class="dropdown-item">
+                            Рейтинг
+                            <input type="range" class="range-input" min="1.0" max="10.0" step="0.1" value="5.0">
+                            <span class="range-value">5.0</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <!-- <main class="main">
-        <div id="movieContainer" class="container">
+    <main class="main">
+
+        <div id="movieContainer" class="grid">
+
 
         </div>
-    </main> -->
+    </main>
 
     
     <footer>
