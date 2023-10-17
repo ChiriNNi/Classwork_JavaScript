@@ -9,11 +9,17 @@
 
     <style>
         body{ 
-            padding: 0px 15px;
+            margin: 0; 
             display: flex;
             flex-direction: column;
             font-family: 'Montserrat', sans-serif;
             background-color: rgb(2,16,27);
+        }
+        html, body {
+            height: 100%;
+        }
+        main {
+            flex: 1;
         }
     </style>
 
@@ -72,11 +78,11 @@
                                 <option value="2021">2021</option>
                                 <option value="2020">2020</option>
                                 <option value="2019">2019</option>
-                                <option value="">2018</option>
-                                <option value="">2020-2023</option>
-                                <option value="">2010-2019</option>
-                                <option value="">2000-2009</option>
-                                <option value="">1990-1999</option>
+                                <option value="2018">2018</option>
+                                <option value="2020-2023">2020-2023</option>
+                                <option value="2010-2019">2010-2019</option>
+                                <option value="2000-2009">2000-2009</option>
+                                <option value="1990-1999">1990-1999</option>
                             </select>
                         </li>
                         <li class="dropdown-item">
@@ -89,59 +95,55 @@
     </header>
 
     <main class="main">
-
-        <div id="movieContainer" class="grid">
-
-
-        </div>
+        <div id="movieContainer" class="grid"></div>
         
         <div id="pagination" class="pagination">
             <button id="prevPageButton" class="page-button">Предыдущая страница</button>
-            <span id="currentPage" class="current-page">1</span> <!-- Текущая страница -->
+            <span id="currentPage" class="current-page">1</span>
             <button id="nextPageButton" class="page-button">Следующая страница</button>
         </div>
     </main>
 
 
     
-    <footer>
-    <div class="container">
-            <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
-                <ul class="list-group">
-                    <h5 class="mb-4 font-weight-bold text-uppercase">Solutions</h5>
-                    <li><a href="../sales/sales-performance-market-pipeline.html">Sales</a></li>
-                    <li><a href="href="../project-management/project-management.html"">Project Management</a></li>
-                    <li><a href="../workforce/workforce-organization-management-hr.html">Workforce</a></li>
-                    <li><a href="../e-commerce/e-commerce.html"> E-Commerce</a></li>
-                    <li><a href="../finance/finance-accounting-erp.html">Finance</a></li>
-                    <li><a href="../business-apps/business-apps.html">Business Apps</a></li>
-                </ul>
-            </div>
+    <footer class="footer">
+        <div class="container">
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                    <ul class="list-group">
+                        <h5 class="mb-4 font-weight-bold text-uppercase">Solutions</h5>
+                        <li><a href="../sales/sales-performance-market-pipeline.html">Sales</a></li>
+                        <li><a href="href="../project-management/project-management.html"">Project Management</a></li>
+                        <li><a href="../workforce/workforce-organization-management-hr.html">Workforce</a></li>
+                        <li><a href="../e-commerce/e-commerce.html"> E-Commerce</a></li>
+                        <li><a href="../finance/finance-accounting-erp.html">Finance</a></li>
+                        <li><a href="../business-apps/business-apps.html">Business Apps</a></li>
+                    </ul>
+                </div>
 
-            <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
 
-                <ul class="list-group">
-                    <li><a href="../sales/sales-performance-market-pipeline.html">Sales</a></li>
-                    <li><a href="href="../project-management/project-management.html"">Project Management</a></li>
-                    <li><a href="../workforce/workforce-organization-management-hr.html">Workforce</a></li>
-                    <li><a href="../e-commerce/e-commerce.html"> E-Commerce</a></li>
-                    <li><a href="../finance/finance-accounting-erp.html">Finance</a></li>
-                    <li><a href="../business-apps/business-apps.html">Business Apps</a></li>
-                </ul>
-            </div>
+                    <ul class="list-group">
+                        <li><a href="../sales/sales-performance-market-pipeline.html">Sales</a></li>
+                        <li><a href="href="../project-management/project-management.html"">Project Management</a></li>
+                        <li><a href="../workforce/workforce-organization-management-hr.html">Workforce</a></li>
+                        <li><a href="../e-commerce/e-commerce.html"> E-Commerce</a></li>
+                        <li><a href="../finance/finance-accounting-erp.html">Finance</a></li>
+                        <li><a href="../business-apps/business-apps.html">Business Apps</a></li>
+                    </ul>
+                </div>
 
-            <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
-                <ul class="list-group">
-                    <li><a href="../sales/sales-performance-market-pipeline.html">Sales</a></li>
-                    <li><a href="href="../project-management/project-management.html"">Project Management</a></li>
-                    <li><a href="../workforce/workforce-organization-management-hr.html">Workforce</a></li>
-                    <li><a href="../e-commerce/e-commerce.html"> E-Commerce</a></li>
-                    <li><a href="../finance/finance-accounting-erp.html">Finance</a></li>
-                    <li><a href="../business-apps/business-apps.html">Business Apps</a></li>
-                </ul>
+                <div class="col-md-3 col-sm-6 col-6 p-0 float-left mb-3">
+                    <ul class="list-group">
+                        <li><a href="../sales/sales-performance-market-pipeline.html">Sales</a></li>
+                        <li><a href="href="../project-management/project-management.html"">Project Management</a></li>
+                        <li><a href="../workforce/workforce-organization-management-hr.html">Workforce</a></li>
+                        <li><a href="../e-commerce/e-commerce.html"> E-Commerce</a></li>
+                        <li><a href="../finance/finance-accounting-erp.html">Finance</a></li>
+                        <li><a href="../business-apps/business-apps.html">Business Apps</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
     </footer>
 
     <script src="script.js"></script>

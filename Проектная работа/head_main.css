@@ -127,3 +127,8 @@ li.dropdown-item select option {
 li.dropdown-item select:hover {
     background-color: #444; /* Цвет фона списка при наведении */
 }
+
+h1 {
+    color: white; 
+    margin: auto;
+}

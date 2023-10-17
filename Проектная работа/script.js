@@ -19,7 +19,12 @@ function createFilmContainer(movies) {
     // Название фильма
     const title = document.createElement("h1");
     title.classList.add("grid-title")
-    title.textContent = movie.nameRu;
+    if (movie.nameRu){
+      title.textContent = movie.nameRu;
+    } else {
+      title.textContent = movie.nameEn;
+    }
+    
 
     const description = document.createElement("p");
     description.textContent = movie.description;
@@ -42,21 +47,30 @@ function createFilmContainer(movies) {
 
 // Загрузка контента при запуске сайта
 document.addEventListener("DOMContentLoaded", function () {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET", `https://kinopoiskapiunofficial.tech/api/v2.1/films/top?type=TOP_100_POPULAR_FILMS&page=${currentPage}`, true);
-    xhr.setRequestHeader("X-API-KEY", apiKey);
-  
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        const response = xhr.responseText;
-        const data = JSON.parse(response);
-        const movies = data.films;
-  
-        createFilmContainer(movies)
-      }
-    };
 
-    xhr.send();
+    function loadContent() {
+      currentFunction = loadContent
+
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", `https://kinopoiskapiunofficial.tech/api/v2.1/films/top?type=TOP_100_POPULAR_FILMS&page=${currentPage}`, true);
+      xhr.setRequestHeader("X-API-KEY", apiKey);
+    
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          const response = xhr.responseText;
+          const data = JSON.parse(response);
+          const movies = data.films;
+
+    
+          createFilmContainer(movies)
+        }
+      };
+  
+      xhr.send();
+    }
+
+    loadContent()
+    
 });
 
 
@@ -65,7 +79,7 @@ function fetchMoviesByGenre(array) {
   currentFunction = fetchMoviesByGenre
 
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", `https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=${array[0]}&page=${currentPage}&country=${array[1]}`, true);
+  xhr.open("GET", `https://kinopoiskapiunofficial.tech/api/v2.2/films?genres=${array[0]}&countries=${array[1]}&yearFrom=${array[2]}&yearTo=${array[3]}&page=${currentPage}`, true);
   xhr.setRequestHeader("X-API-KEY", apiKey);
 
   xhr.onreadystatechange = function () {
@@ -76,7 +90,15 @@ function fetchMoviesByGenre(array) {
 
           movieContainer.innerHTML = "";
 
-          createFilmContainer(movies)
+          if (movies.length != 0) {
+            createFilmContainer(movies)
+          } else { 
+            const text = document.createElement("h1");
+            text.textContent = 'Ничего не найдено';
+            movieContainer.appendChild(text);
+          }
+
+          
       }
   };
   xhr.send();
@@ -84,10 +106,28 @@ function fetchMoviesByGenre(array) {
 
 // Обработчик нажатия кнопки "Применить фильтр"
 document.getElementById("applyFilterButton").addEventListener("click", function () {
-  const selectedGenre = document.querySelector('input[name="genre"]:checked').value;
-  const selectedCountry = document.querySelector('input[name="country"]:checked').value;
-  currentArgument = [selectedGenre, selectedCountry]; 
-  fetchMoviesByGenre([selectedGenre, selectedCountry]);
+  const selectedGenre = document.querySelector('input[name="genre"]:checked');
+  const selectedCountry = document.querySelector('input[name="country"]:checked');
+  const selectedYear = document.querySelector("li.dropdown-item select");
+
+  const genreValue = selectedGenre ? selectedGenre.value : "";
+  const countryValue = selectedCountry ? selectedCountry.value : "";
+  const yearValue = selectedYear ? selectedYear.value : ""; 
+
+  console.log(yearValue.split('-'))
+
+  if (yearValue.split('-').length == 1) { 
+    yearFrom = yearValue
+    yearTo = yearValue
+  } else { 
+    yearFrom = yearValue[0]
+    yearTo = yearValue[1]
+  }
+
+
+  currentArgument = [genreValue, countryValue, yearFrom, yearTo]; 
+  console.log(currentArgument)
+  fetchMoviesByGenre(currentArgument);
 });
 
 
@@ -108,9 +148,22 @@ function searchMovies(query) {
           const data = JSON.parse(response);
           const movies = data.items;
 
-          movieContainer.innerHTML = ""; 
+          movieContainer.innerHTML = "";
 
-          createFilmContainer(movies)
+          if (movies.length != 0) {
+            createFilmContainer(movies)
+            currentPageSpan.style.visibility = "block"; 
+            nextPageButton.style.visibility = "block"; 
+            prevPageButton.style.visibility = "block"; 
+          } else { 
+            const text = document.createElement("h1");
+            text.textContent = 'Ничего не найдено';
+            movieContainer.appendChild(text);
+
+            currentPageSpan.style.visibility = "hidden"; 
+            nextPageButton.style.visibility = "hidden"; 
+            prevPageButton.style.visibility = "hidden"; 
+          }
       }
   };
 
@@ -134,6 +187,11 @@ nextPageButton.addEventListener("click", function () {
   currentPage++;
   currentFunction(currentArgument);
   currentPageSpan.textContent = currentPage;
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 });
 
 prevPageButton.addEventListener("click", function () {
@@ -141,5 +199,10 @@ prevPageButton.addEventListener("click", function () {
       currentPage--;
       currentFunction(currentArgument);
       currentPageSpan.textContent = currentPage;
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
   }
 });
