@@ -31,8 +31,11 @@
     <header class="header">
         <a href="#" class="logo"><!--<img src="img/logo.png" alt="Logo" class="logo-image">-->Logo</a> 
         <nav class="nav">
+            <div class="search-box">
+                <input type="text" id="movieSearchInput" placeholder="Поиск фильмов...">
+                <button id="movieSearchButton">🔍︎</button>
+            </div>
             <a href="#" class="nav-item">Home</a>
-            <a href="#" class="nav-item">Contact</a>
             <a href="#" class="nav-item">About</a>
             <div class="dropdown">
                 <a href="#" class="nav-item">Movie</a>
@@ -42,11 +45,11 @@
                             <b>Жанр</b>
                             <br>
                             <form class="sub-menu">
-                                <label><input type="radio" name="genre" value="Фантастика"> Фантастика<span class="checkmark"></span></label>
-                                <label><input type="radio" name="genre" value="Комедии"> Комедии<span class="checkmark"></span></label>
-                                <label><input type="radio" name="genre" value="Мультфильмы"> Мультфильмы<span class="checkmark"></span></label>
-                                <label><input type="radio" name="genre" value="Ужасы"> Ужасы<span class="checkmark"></span></label>
-                                <label><input type="radio" name="genre" value="Аниме"> Аниме<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="6"> Фантастика<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="13"> Комедии<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="18"> Мультфильмы<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="17"> Ужасы<span class="checkmark"></span></label>
+                                <label><input type="radio" name="genre" value="24"> Аниме<span class="checkmark"></span></label>
                             </form>
                         </li>
 
@@ -54,17 +57,30 @@
                             <b>Страна</b>
                             <br>
                             <form class="sub-menu">
-                                <label><input type="radio" name="country" value="Россия"> Россия<span class="checkmark"></span></label>
-                                <label><input type="radio" name="country" value="США"> США<span class="checkmark"></span></label>
-                                <label><input type="radio" name="country" value="Япония"> Япония<span class="checkmark"></span></label>
-                                <label><input type="radio" name="country" value="Франция"> Франция<span class="checkmark"></span></label>
-                                <label><input type="radio" name="country" value="СССР"> СССР<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="34"> Россия<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="1"> США<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="16"> Япония<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="3"> Франция<span class="checkmark"></span></label>
+                                <label><input type="radio" name="country" value="33"> СССР<span class="checkmark"></span></label>
                             </form>
                         </li>
                         <li class="dropdown-item">
-                            Рейтинг
-                            <input type="range" class="range-input" min="1.0" max="10.0" step="0.1" value="5.0">
-                            <span class="range-value">5.0</span>
+                            <b>Год</b>
+                            <select name="" id="">
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="">2018</option>
+                                <option value="">2020-2023</option>
+                                <option value="">2010-2019</option>
+                                <option value="">2000-2009</option>
+                                <option value="">1990-1999</option>
+                            </select>
+                        </li>
+                        <li class="dropdown-item">
+                            <button id="applyFilterButton">Применить фильтр</button>
                         </li>
                     </ul>
                 </div>
@@ -78,7 +94,14 @@
 
 
         </div>
+        
+        <div id="pagination" class="pagination">
+            <button id="prevPageButton" class="page-button">Предыдущая страница</button>
+            <span id="currentPage" class="current-page">1</span> <!-- Текущая страница -->
+            <button id="nextPageButton" class="page-button">Следующая страница</button>
+        </div>
     </main>
+
 
     
     <footer>

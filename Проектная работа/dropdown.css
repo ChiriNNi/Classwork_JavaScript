@@ -98,3 +98,19 @@ li.dropdown-item {
 label{
     font-size: 14px;
 }
+
+#applyFilterButton {
+    background-color: rgb(44, 44, 44);
+    color: #fff;
+    padding: 8px 16px;
+    cursor: pointer;
+    border: 1px solid black; 
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: 100%; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+#applyFilterButton:hover {
+    background-color: #444;
+}

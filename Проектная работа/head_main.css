@@ -41,3 +41,89 @@
 .grid-title{
     text-align: center; 
 }
+
+/* Стили для пагинации */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.current-page{
+    font-size: 25px; 
+    color: white; 
+}
+
+.page-button {
+    background-color: #0074E4; /* Цвет фона кнопок */
+    color: #fff; /* Цвет текста кнопок */
+    border-radius: 25px;
+    padding: 8px 18px;
+    border: none;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.page-button:hover {
+    background-color: #0056B3; /* Цвет фона при наведении на кнопки */
+}
+
+/* Стили для поисковика */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #333; /* Цвет фона поискового блока */
+    padding: 10px;
+    border-radius: 10px; /* Закругление углов блока */
+    width: 275px; 
+    height: 30px;
+}
+
+#movieSearchInput {
+    background-color: #333; /* Цвет фона вводного поля */
+    color: #fff; /* Цвет текста вводного поля */
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Закругление углов вводного поля */
+    margin-right: 10px;
+    width: 220px;
+}
+
+#movieSearchButton {
+    background-color: #0074E4; /* Цвет фона кнопки "Поиск" */
+    color: #fff; /* Цвет текста кнопки "Поиск" */
+    border: none;
+    padding: 7px 10px;
+    border-radius: 15px; /* Закругление углов кнопки "Поиск" */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Плавное изменение цвета фона кнопки "Поиск" */
+}
+
+#movieSearchButton:hover {
+    background-color: #0056B3; /* Цвет фона кнопки "Поиск" при наведении */
+}
+
+
+li.dropdown-item select {
+    width: 100%;
+    background-color: #333; /* Цвет фона списка */
+    color: #fff; /* Цвет текста */
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Закругление углов списка */
+    font-family: 'Montserrat', sans-serif;
+}
+
+li.dropdown-item select option {
+    background-color: #333; /* Цвет фона опций списка */
+    color: #fff; /* Цвет текста опций списка */
+    border: none;
+    padding: 10px;
+    border-radius: 5px; /* Закругление углов опций списка */
+    font-family: 'Montserrat', sans-serif;
+}
+
+li.dropdown-item select:hover {
+    background-color: #444; /* Цвет фона списка при наведении */
+}
