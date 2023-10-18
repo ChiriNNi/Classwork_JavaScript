@@ -25,7 +25,6 @@ function createFilmContainer(movies) {
       title.textContent = movie.nameEn;
     }
     
-
     const description = document.createElement("p");
     description.textContent = movie.description;
 
@@ -61,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const data = JSON.parse(response);
           const movies = data.films;
 
+          movieContainer.innerHTML = ''
     
           createFilmContainer(movies)
         }
@@ -152,17 +152,11 @@ function searchMovies(query) {
 
           if (movies.length != 0) {
             createFilmContainer(movies)
-            currentPageSpan.style.visibility = "block"; 
-            nextPageButton.style.visibility = "block"; 
-            prevPageButton.style.visibility = "block"; 
           } else { 
             const text = document.createElement("h1");
+
             text.textContent = 'Ничего не найдено';
             movieContainer.appendChild(text);
-
-            currentPageSpan.style.visibility = "hidden"; 
-            nextPageButton.style.visibility = "hidden"; 
-            prevPageButton.style.visibility = "hidden"; 
           }
       }
   };

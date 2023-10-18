@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: 'Rocket Clouds', sans-serif;
     src: url('../fonts/Rocket Clouds.ttf') format('truetype'); 
     font-style: normal; 
     font-weight: normal; 
-}
+} */
 
 .main{
     width: 100%;
@@ -12,7 +12,8 @@
     margin: auto;
     flex: auto;
     box-sizing: border-box;
-    font-family: 'Rocket Clouds', sans-serif;
+    font-family: 'Dancing Script', cursive;
+
 }
 
 .container{
@@ -33,9 +34,10 @@
 
 
 h1 {
-    font-size: 50px;
+    font-size: 100px;
     
-    animation: flicker 2.5s infinite alternate;   
+    animation: flicker 2.5s infinite alternate;  
+     
 }
 
 h2 {

@@ -7,11 +7,11 @@ function toggleForm() {
     if (formTitle.textContent === "Register") {
         formTitle.textContent = "Authorization";
         formDescription.textContent = "Please fill in this form to sign in an account.";
-        formSwitch.innerHTML = 'Don\'t have an account? <button type="button" onclick="toggleForm()">Register</button>.';
+        formSwitch.innerHTML = 'Don\'t have an account? <a href="#" type="button" onclick="toggleForm()">Register</a>.';
     } else {
         formTitle.textContent = "Register";
         formDescription.textContent = "Please fill in this form to create an account.";
-        formSwitch.innerHTML = 'Already have an account? <button type="button" onclick="toggleForm()">Sign in</button>.';
+        formSwitch.innerHTML = 'Already have an account? <a href="#" type="button" onclick="toggleForm()">Sign in</a>.';
     }
 }
 
